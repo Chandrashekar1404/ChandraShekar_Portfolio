@@ -1,0 +1,309 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Live weather</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="weather.css">
+    </head>
+    <body>
+        
+        <div class="search-bar">
+            <div class="border border-1 border-white searchParentDiv">
+                <input type="text" class="input-field" placeholder="City Name">
+                <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-search search-icon si" viewBox="0 0 16 16" onclick="fetchData()">
+                    <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0"/></svg>
+            </div>
+
+        </div>
+
+
+        <div class="mainContentParentDiv d-flex">
+
+            <div class="left-div">
+                <div class="currentTemDiv left-child p-3 d-flex flex-column gap-3">
+                    <h6  class="m-0" id="cityName">City Name</h6>
+                    <h5 class="m-0"><span id="cityTemp">0</span>&deg;C</h5>
+                    <h6 class="m-0" id="skyDec">Sky Description</h6>
+                    <hr class="line">
+                    <div class="d-flex gap-2">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-calendar-fill" viewBox="0 0 16 16">
+                            <path d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V5h16V4H0V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5"/></svg>
+                            <h6 id="dt">Date</h6>
+                    </div>
+
+                    <div class="d-flex gap-2">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-clock-fill" viewBox="0 0 16 16">
+                            <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0M8 3.5a.5.5 0 0 0-1 0V9a.5.5 0 0 0 .252.434l3.5 2a.5.5 0 0 0 .496-.868L8 8.71z"/></svg>
+                            <h6 class="m-0" id="tm">Time</h6>
+                    </div>
+
+                </div>
+
+                <div class="nextfivedays left-child p-3 d-flex flex-column gap-2">
+                    <h6 class="m-0" id="comingFiveDays">Coming 5 Days</h6>
+
+                    <div class="d-flex flex-column gap-3">
+                        <div class="forecastrow d-flex aling-items-center justify-content-between">
+                            <div class="d-flex gap-1 aling-items-center">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-cloud-sun-fill" viewBox="0 0 16 16">
+                                    <path d="M11.473 11a4.5 4.5 0 0 0-8.72-.99A3 3 0 0 0 3 16h8.5a2.5 2.5 0 0 0 0-5z"/>
+                                    <path d="M10.5 1.5a.5.5 0 0 0-1 0v1a.5.5 0 0 0 1 0zm3.743 1.964a.5.5 0 1 0-.707-.707l-.708.707a.5.5 0 0 0 .708.708zm-7.779-.707a.5.5 0 0 0-.707.707l.707.708a.5.5 0 1 0 .708-.708zm1.734 3.374a2 2 0 1 1 3.296 2.198q.3.423.516.898a3 3 0 1 0-4.84-3.225q.529.017 1.028.129m4.484 4.074c.6.215 1.125.59 1.522 1.072a.5.5 0 0 0 .039-.742l-.707-.707a.5.5 0 0 0-.854.377M14.5 6.5a.5.5 0 0 0 0 1h1a.5.5 0 0 0 0-1z"/></svg>
+
+                                    <h6 class="m-0">7 &deg;C</h6>
+                            </div>
+
+                            <h6 class="m-0">Saturday</h6>
+                            <h6 class="m-0">08-03-2025</h6>
+                        </div>
+                        <div class="forecastrow d-flex aling-items-center justify-content-between">
+                            <div class="d-flex gap-1 aling-items-center">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-cloud-sun-fill" viewBox="0 0 16 16">
+                                    <path d="M11.473 11a4.5 4.5 0 0 0-8.72-.99A3 3 0 0 0 3 16h8.5a2.5 2.5 0 0 0 0-5z"/>
+                                    <path d="M10.5 1.5a.5.5 0 0 0-1 0v1a.5.5 0 0 0 1 0zm3.743 1.964a.5.5 0 1 0-.707-.707l-.708.707a.5.5 0 0 0 .708.708zm-7.779-.707a.5.5 0 0 0-.707.707l.707.708a.5.5 0 1 0 .708-.708zm1.734 3.374a2 2 0 1 1 3.296 2.198q.3.423.516.898a3 3 0 1 0-4.84-3.225q.529.017 1.028.129m4.484 4.074c.6.215 1.125.59 1.522 1.072a.5.5 0 0 0 .039-.742l-.707-.707a.5.5 0 0 0-.854.377M14.5 6.5a.5.5 0 0 0 0 1h1a.5.5 0 0 0 0-1z"/></svg>
+
+                                    <h6 class="m-0">7 &deg;C</h6>
+                            </div>
+
+                            <h6 class="m-0">Saturday</h6>
+                            <h6 class="m-0">08-03-2025</h6>
+                        </div>
+                        <div class="forecastrow d-flex aling-items-center justify-content-between">
+                            <div class="d-flex gap-1 aling-items-center">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-cloud-sun-fill" viewBox="0 0 16 16">
+                                    <path d="M11.473 11a4.5 4.5 0 0 0-8.72-.99A3 3 0 0 0 3 16h8.5a2.5 2.5 0 0 0 0-5z"/>
+                                    <path d="M10.5 1.5a.5.5 0 0 0-1 0v1a.5.5 0 0 0 1 0zm3.743 1.964a.5.5 0 1 0-.707-.707l-.708.707a.5.5 0 0 0 .708.708zm-7.779-.707a.5.5 0 0 0-.707.707l.707.708a.5.5 0 1 0 .708-.708zm1.734 3.374a2 2 0 1 1 3.296 2.198q.3.423.516.898a3 3 0 1 0-4.84-3.225q.529.017 1.028.129m4.484 4.074c.6.215 1.125.59 1.522 1.072a.5.5 0 0 0 .039-.742l-.707-.707a.5.5 0 0 0-.854.377M14.5 6.5a.5.5 0 0 0 0 1h1a.5.5 0 0 0 0-1z"/></svg>
+
+                                    <h6 class="m-0">7 &deg;C</h6>
+                            </div>
+
+                            <h6 class="m-0">Saturday</h6>
+                            <h6 class="m-0">08-03-2025</h6>
+                        </div>
+                        <div class="forecastrow d-flex aling-items-center justify-content-between">
+                            <div class="d-flex gap-1 aling-items-center">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-cloud-sun-fill" viewBox="0 0 16 16">
+                                    <path d="M11.473 11a4.5 4.5 0 0 0-8.72-.99A3 3 0 0 0 3 16h8.5a2.5 2.5 0 0 0 0-5z"/>
+                                    <path d="M10.5 1.5a.5.5 0 0 0-1 0v1a.5.5 0 0 0 1 0zm3.743 1.964a.5.5 0 1 0-.707-.707l-.708.707a.5.5 0 0 0 .708.708zm-7.779-.707a.5.5 0 0 0-.707.707l.707.708a.5.5 0 1 0 .708-.708zm1.734 3.374a2 2 0 1 1 3.296 2.198q.3.423.516.898a3 3 0 1 0-4.84-3.225q.529.017 1.028.129m4.484 4.074c.6.215 1.125.59 1.522 1.072a.5.5 0 0 0 .039-.742l-.707-.707a.5.5 0 0 0-.854.377M14.5 6.5a.5.5 0 0 0 0 1h1a.5.5 0 0 0 0-1z"/></svg>
+
+                                    <h6 class="m-0">7 &deg;C</h6>
+                            </div>
+
+                            <h6 class="m-0">Saturday</h6>
+                            <h6 class="m-0">08-03-2025</h6>
+                        </div>
+                        <div class="forecastrow d-flex aling-items-center justify-content-between">
+                            <div class="d-flex gap-1 aling-items-center">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-cloud-sun-fill" viewBox="0 0 16 16">
+                                    <path d="M11.473 11a4.5 4.5 0 0 0-8.72-.99A3 3 0 0 0 3 16h8.5a2.5 2.5 0 0 0 0-5z"/>
+                                    <path d="M10.5 1.5a.5.5 0 0 0-1 0v1a.5.5 0 0 0 1 0zm3.743 1.964a.5.5 0 1 0-.707-.707l-.708.707a.5.5 0 0 0 .708.708zm-7.779-.707a.5.5 0 0 0-.707.707l.707.708a.5.5 0 1 0 .708-.708zm1.734 3.374a2 2 0 1 1 3.296 2.198q.3.423.516.898a3 3 0 1 0-4.84-3.225q.529.017 1.028.129m4.484 4.074c.6.215 1.125.59 1.522 1.072a.5.5 0 0 0 .039-.742l-.707-.707a.5.5 0 0 0-.854.377M14.5 6.5a.5.5 0 0 0 0 1h1a.5.5 0 0 0 0-1z"/></svg>
+
+                                    <h6 class="m-0">7 &deg;C</h6>
+                            </div>
+
+                            <h6 class="m-0">Saturday</h6>
+                            <h6 class="m-0">08-03-2025</h6>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="right-div">
+                <div class="rightRow rowOne d-flex gap-3 justify-content-between align-items-center">
+
+                    <div class="extraMetric d-flex gap-3">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-wind" viewBox="0 0 16 16">
+                            <path d="M12.5 2A2.5 2.5 0 0 0 10 4.5a.5.5 0 0 1-1 0A3.5 3.5 0 1 1 12.5 8H.5a.5.5 0 0 1 0-1h12a2.5 2.5 0 0 0 0-5m-7 1a1 1 0 0 0-1 1 .5.5 0 0 1-1 0 2 2 0 1 1 2 2h-5a.5.5 0 0 1 0-1h5a1 1 0 0 0 0-2M0 9.5A.5.5 0 0 1 .5 9h10.042a3 3 0 1 1-3 3 .5.5 0 0 1 1 0 2 2 0 1 0 2-2H.5a.5.5 0 0 1-.5-.5"/></svg>
+
+                            <div>
+                                <h6 class="m-0">Metric Name</h6>
+                                <h6 class="m-0">Metric value</h6>
+                            </div>
+                    </div>
+
+                    <div class="extraMetric d-flex gap-3">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-wind" viewBox="0 0 16 16">
+                            <path d="M12.5 2A2.5 2.5 0 0 0 10 4.5a.5.5 0 0 1-1 0A3.5 3.5 0 1 1 12.5 8H.5a.5.5 0 0 1 0-1h12a2.5 2.5 0 0 0 0-5m-7 1a1 1 0 0 0-1 1 .5.5 0 0 1-1 0 2 2 0 1 1 2 2h-5a.5.5 0 0 1 0-1h5a1 1 0 0 0 0-2M0 9.5A.5.5 0 0 1 .5 9h10.042a3 3 0 1 1-3 3 .5.5 0 0 1 1 0 2 2 0 1 0 2-2H.5a.5.5 0 0 1-.5-.5"/></svg>
+
+                            <div>
+                                <h6 class="m-0">Metric Name</h6>
+                                <h6 class="m-0">Metric value</h6>
+                            </div>
+                    </div>
+
+                    <div class="extraMetric d-flex gap-3">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-wind" viewBox="0 0 16 16">
+                            <path d="M12.5 2A2.5 2.5 0 0 0 10 4.5a.5.5 0 0 1-1 0A3.5 3.5 0 1 1 12.5 8H.5a.5.5 0 0 1 0-1h12a2.5 2.5 0 0 0 0-5m-7 1a1 1 0 0 0-1 1 .5.5 0 0 1-1 0 2 2 0 1 1 2 2h-5a.5.5 0 0 1 0-1h5a1 1 0 0 0 0-2M0 9.5A.5.5 0 0 1 .5 9h10.042a3 3 0 1 1-3 3 .5.5 0 0 1 1 0 2 2 0 1 0 2-2H.5a.5.5 0 0 1-.5-.5"/></svg>
+
+                            <div>
+                                <h6 class="m-0">Metric Name</h6>
+                                <h6 class="m-0">Metric value</h6>
+                            </div>
+                    </div>
+
+                    <div class="extraMetric d-flex gap-3">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-wind" viewBox="0 0 16 16">
+                            <path d="M12.5 2A2.5 2.5 0 0 0 10 4.5a.5.5 0 0 1-1 0A3.5 3.5 0 1 1 12.5 8H.5a.5.5 0 0 1 0-1h12a2.5 2.5 0 0 0 0-5m-7 1a1 1 0 0 0-1 1 .5.5 0 0 1-1 0 2 2 0 1 1 2 2h-5a.5.5 0 0 1 0-1h5a1 1 0 0 0 0-2M0 9.5A.5.5 0 0 1 .5 9h10.042a3 3 0 1 1-3 3 .5.5 0 0 1 1 0 2 2 0 1 0 2-2H.5a.5.5 0 0 1-.5-.5"/></svg>
+
+                            <div>
+                                <h6 class="m-0">Metric Name</h6>
+                                <h6 class="m-0">Metric value</h6>
+                            </div>
+                    </div>
+                </div>
+
+                <div class="rightRow rowTwo d-flex justify-content-between align-items-center">
+                    <div class="AQI row2Div p-3 d-flex flex-column gap-2">
+                        <h5>Air Quality Index (AQI)</h5>
+
+                        <div class="d-flex gap-3 align-items-center">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-wind" viewBox="0 0 16 16">
+                                <path d="M12.5 2A2.5 2.5 0 0 0 10 4.5a.5.5 0 0 1-1 0A3.5 3.5 0 1 1 12.5 8H.5a.5.5 0 0 1 0-1h12a2.5 2.5 0 0 0 0-5m-7 1a1 1 0 0 0-1 1 .5.5 0 0 1-1 0 2 2 0 1 1 2 2h-5a.5.5 0 0 1 0-1h5a1 1 0 0 0 0-2M0 9.5A.5.5 0 0 1 .5 9h10.042a3 3 0 1 1-3 3 .5.5 0 0 1 1 0 2 2 0 1 0 2-2H.5a.5.5 0 0 1-.5-.5"/></svg>
+                                <div class="text-center">
+                                    <h6>AQI Metric</h6>
+                                    <h6>0</h6>
+                                </div>
+
+                                <div class="text-center">
+                                    <h6>AQI Metric</h6>
+                                    <h6>0</h6>
+                                </div>
+
+                                <div class="text-center">
+                                    <h6>AQI Metric</h6>
+                                    <h6>0</h6>
+                                </div>
+
+                                <div class="text-center">
+                                    <h6>AQI Metric</h6>
+                                    <h6>0</h6>
+                                </div>
+                        </div>
+                    </div>
+
+                    <div class="sunRise row2Div p-3">
+                        <h5 class="m-0">Sunrise & Sunset</h5>
+
+                        <div class="d-flex justify-content-between align-items-center m-4">
+                            <div class="d-flex gap-3 text-aling-center">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="currentColor" class="bi bi-brightness-high-fill sun" viewBox="0 0 16 16">
+                                    <path d="M12 8a4 4 0 1 1-8 0 4 4 0 0 1 8 0M8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0m0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13m8-5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5M3 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2A.5.5 0 0 1 3 8m10.657-5.657a.5.5 0 0 1 0 .707l-1.414 1.415a.5.5 0 1 1-.707-.708l1.414-1.414a.5.5 0 0 1 .707 0m-9.193 9.193a.5.5 0 0 1 0 .707L3.05 13.657a.5.5 0 0 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0m9.193 2.121a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707M4.464 4.465a.5.5 0 0 1-.707 0L2.343 3.05a.5.5 0 1 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .708"/></svg>
+
+                                    <h6 class="m-0">Sunrise<br><Span id="sr"><h5>5:05AM</h5></Span></h6>
+                            </div>
+
+                            <div class="d-flex gap-3 text-aling-center">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="currentColor" class="bi bi-moon-stars-fill moon" viewBox="0 0 16 16">
+                                    <path d="M6 .278a.77.77 0 0 1 .08.858 7.2 7.2 0 0 0-.878 3.46c0 4.021 3.278 7.277 7.318 7.277q.792-.001 1.533-.16a.79.79 0 0 1 .81.316.73.73 0 0 1-.031.893A8.35 8.35 0 0 1 8.344 16C3.734 16 0 12.286 0 7.71 0 4.266 2.114 1.312 5.124.06A.75.75 0 0 1 6 .278"/>
+                                    <path d="M10.794 3.148a.217.217 0 0 1 .412 0l.387 1.162c.173.518.579.924 1.097 1.097l1.162.387a.217.217 0 0 1 0 .412l-1.162.387a1.73 1.73 0 0 0-1.097 1.097l-.387 1.162a.217.217 0 0 1-.412 0l-.387-1.162A1.73 1.73 0 0 0 9.31 6.593l-1.162-.387a.217.217 0 0 1 0-.412l1.162-.387a1.73 1.73 0 0 0 1.097-1.097zM13.863.099a.145.145 0 0 1 .274 0l.258.774c.115.346.386.617.732.732l.774.258a.145.145 0 0 1 0 .274l-.774.258a1.16 1.16 0 0 0-.732.732l-.258.774a.145.145 0 0 1-.274 0l-.258-.774a1.16 1.16 0 0 0-.732-.732l-.774-.258a.145.145 0 0 1 0-.274l.774-.258c.346-.115.617-.386.732-.732z"/></svg>
+
+                                    <h6 class="m-0">Sunrise<br><Span id="ss"><h5>5:05AM</h5></Span></h6>
+                            </div>
+                        </div>
+
+
+
+                    </div>
+                </div>
+
+                <div class="rightRow rowThree d-flex flex-column gap-2">
+                    <h5 class="m-0">Today</h5>
+
+                    <div class="d-flex justify-content-between align-items-center todayTempParentDiv">
+                        <div class="todayTemp">
+                            <h6 class="m-0">9:00 Am</h6>
+                            <h5 class="m-0">5 &deg;C</h5>
+                        </div>
+
+                        <div class="todayTemp">
+                            <h6 class="m-0">9:00 Am</h6>
+                            <h5 class="m-0">5 &deg;C</h5>
+                        </div>
+
+                        <div class="todayTemp">
+                            <h6 class="m-0">9:00 Am</h6>
+                            <h5 class="m-0">5 &deg;C</h5>
+                        </div>
+
+                        <div class="todayTemp">
+                            <h6 class="m-0">9:00 Am</h6>
+                            <h5 class="m-0">5 &deg;C</h5>
+                        </div>
+
+                        <div class="todayTemp">
+                            <h6 class="m-0">9:00 Am</h6>
+                            <h5 class="m-0">5 &deg;C</h5>
+                        </div>
+
+                        <div class="todayTemp">
+                            <h6 class="m-0">9:00 Am</h6>
+                            <h5 class="m-0">5 &deg;C</h5>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script>
+        <script  src="https://code.jquery.com/jquery-3.7.1.js"integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4="crossorigin="anonymous"></script>
+
+        <script>
+            function dateFormat(timeStamp) {
+            const date = new Date(timeStamp * 1000); // Convert seconds to milliseconds
+            console.log(date.toUTCString());  // Correct UTC format
+            console.log(date.toLocaleString()); // Correct local format
+            return date.toLocaleString(); // Return human-readable date
+            }           
+            async function fetchData(){
+                
+                // accessing the input values.
+                let cityName=document.getElementsByClassName("input-field")[0].value;
+                
+                // accessing the weather api.
+                let requestData = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${cityName}&units=metric&appid=e1c17501f4a961e1fc8ccb83c573a54c`);
+                // changing the api into json file.
+                let formattedData=await requestData.json();
+                // to display the weather data in the screen.
+                // leftDiv-first is displayed.
+                let responseCityName=formattedData.name;
+                let responseTemp=formattedData.main.temp;
+                let responseDesc=formattedData.weather[0].description;
+                $("#cityName")[0].innerText=responseCityName;
+                $('#cityTemp')[0].innerText=responseTemp;
+                $('#skyDec')[0].innerText=responseDesc;
+                // update date and time.
+                let properDate= dateFormat(formattedData.dt);
+                let date=properDate.split(",")[0];
+                let time=properDate.split(",")[1];
+                $("#dt")[0].innerText=date;
+                $("#tm")[0].innerText=time;
+                
+                // update sunrise and sunset.
+                let sunRiseTimeStamp=formattedData.sys.sunrise;
+                let sunSetTimeStamp=formattedData.sys.sunset;
+                let properSunRiseTime=dateFormat(sunRiseTimeStamp).split(",")[1];
+                let properSunSetTime=dateFormat(sunSetTimeStamp).split(",")[1];
+                $("#sr")[0].innerText=properSunRiseTime;
+                $("#ss")[0].innerText=properSunSetTime;
+            }
+
+
+
+
+
+
+
+
+
+
+        </script>
+    </body>
+</html>
+    

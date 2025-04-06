@@ -1,0 +1,221 @@
+body{
+    background: url("bimg.png");
+    background-position: bottom;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+    font-family: "Comfortaa", sans-serif;
+    color: white;
+}
+
+.search-bar{
+    height: 10vh;
+    background-color: black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+}
+
+.searchParentDiv{
+    width: 50%;
+    position: relative;
+}
+
+.input-field{
+    width: 100%;
+    border-radius: 25px;
+    padding: 10px;
+    border: none;
+    
+}
+
+.search-icon{
+    position: absolute;
+    right: 10px;
+    top: 8px;
+    cursor: pointer;
+}
+
+
+.mainContentParentDiv{
+    
+    height: 90vh;
+}
+
+.left-div{
+    width: 30%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    
+}
+
+.left-child{
+    background-color: rgba(212,212,212,0.4);
+    width: 85%;
+    height: 40vh;
+    margin: auto;
+    border-radius: 10px;
+    backdrop-filter: blur(5px);
+}
+
+
+.currentTemDiv h6{
+    font-size: larger;
+}
+
+#cityName{
+    font-size: xx-large;
+}
+
+#cityTemp{
+    font-size: x-large;
+}
+
+#comingFiveDays{
+    font-size: x-large;
+}
+
+.right-div{
+    width: 70%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.rightRow{
+    height: 27vh;
+    width: 100%;
+}
+
+.extraMetric{
+    background-color: rgba(212,212,212,0.4);
+    width: fit-content;
+    padding: 5% 2%;
+    border-radius: 15px;
+    align-items: center;
+}
+
+.row2Div{
+    width: 45%;
+    height: 85%;
+    background-color: rgba(212,212,212,0.4);
+    border-radius: 15px;
+    backdrop-filter: blur(5px);
+}
+
+.sun{
+    color: yellow;
+}
+
+.moon{
+    color: darkgray;
+}
+
+.todayTemp{
+    background-color: rgba(212,212,212,0.4);
+    width: fit-content;
+    padding: 15px;
+    border-radius: 15px;
+    backdrop-filter: blur(5px);
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+    justify-content: center;
+}
+
+.si{
+    color: black;
+}
+
+.input-field{
+    outline: none;
+}
+
+
+@media only screen and (max-width: 768px) {
+    .search-bar {
+        width: 100%;
+        padding: 10px;
+    }
+
+    .searchParentDiv {
+        width: 90%;
+    }
+
+    .input-field {
+        font-size: 16px;
+    }
+
+    .mainContentParentDiv {
+        flex-direction: column;
+        height: auto;
+        margin-top: 5%;
+    }
+
+    .left-div,
+    .right-div {
+        width: 100%;
+    }
+
+    .left-child {
+        width: 95%;
+        height: auto;
+        padding: 10px;
+        margin-bottom: 5%;
+    }
+
+    .rightRow {
+        height: auto;
+        gap: 10px;
+    }
+
+    .todayTemp {
+        width: 100%;
+        padding: 10px;
+    }
+
+    .forecastrow {
+        text-align: center;
+    }
+
+    .forecastrow h6 {
+        font-size: 16px;
+    }
+
+    .rowOne{
+        /* flex-direction: column; */
+        flex-wrap: wrap;
+        width: 95%;
+        margin: auto;
+    }
+
+    .rowTwo{
+        flex-direction: column;
+        width: 95%;
+        margin: auto;
+    }
+
+    .row2Div{
+        width: 100%;
+        margin-bottom: 10px;
+    }
+
+    .todayTempParentDiv{
+        flex-wrap: wrap;
+        justify-content: center;
+        width: 85%;
+        margin: auto;
+        gap: 3%;
+        padding: 2%;
+    }
+    
+    .todayTemp{
+        width: fit-content;
+    }
+
+}
