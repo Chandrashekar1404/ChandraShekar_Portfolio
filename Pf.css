@@ -1,0 +1,482 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: white;
+    font-family: "Poppins", sans-serif;
+    
+}
+
+/* Navbar */
+.mhead {
+    margin-right: auto;
+    padding-left: 2rem;
+    font-weight: bold;
+    color: rgb(86, 86, 213);
+}
+
+.nav {
+    position: fixed !important;
+    border-bottom: 2px solid rgb(230, 230, 230);
+    padding: 1rem;
+    background-color: white;
+    width: 100%;
+    z-index: 1;
+}
+
+/* Main section */
+.main {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-left: 10rem;
+    height: 100vh;
+}
+
+/* Left side (Text) */
+.profile {
+    max-width: 50%;
+    width: fit-content;    
+}
+
+.profile h1 {
+    font-weight: bold;
+    font-size: 3rem;
+}
+
+.name {
+    color: rgb(86, 86, 213);
+    font-weight: bold;
+}
+
+.pc {
+    margin-top: 1rem;
+    color: rgb(95, 92, 92);
+    font-weight: 400;
+    font-size: 1.2rem;
+}
+
+.learnmorebtn {
+    margin-top: 2rem;
+}
+
+.Lbutton {
+    width: 10rem;
+    background-color: #0d0d0d;
+    border-radius: 8px;
+    font-size: 18px;
+}
+
+/* Right side (Image Block) */
+.profile-block {
+    max-width: 60%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 2rem;
+}
+
+.profile-container {
+    background-color: #f0eeff;
+    border-radius: 150px;
+    width: 600px;
+    padding: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.profile-image {
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 4px solid #6c63ff;
+    background-color: white;
+}
+
+.profile-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.main2-container{
+    margin-top: 5rem;
+    justify-content: center;
+    align-items: center;
+    height: fit-content;
+    width: 100%;
+}
+
+.main2{
+    justify-content: center;
+    align-items: center;
+    height: fit-content;
+    width: 60%;
+    margin-left: 20rem;
+}
+
+.about{
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    font-weight: bold;
+}
+
+.a-para{
+    font-size: larger;
+    color: rgb(95, 92, 92);
+    line-height: 2rem;
+}
+
+.main3-container{
+    margin-top: 5rem;
+    justify-content: center;
+    align-items: center;
+    height: fit-content;
+    width: 100%;
+}
+
+.main3{
+    justify-content: center;
+    align-items: center;
+    height: fit-content;
+    width: 60%;
+    margin-left: 20rem;
+}
+
+.skills{
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    font-weight: bold;
+}
+
+.cards-container{
+    margin-top: 3rem;
+    display: flex;
+    justify-content: space-around;
+}
+
+.card-text{
+    font-size: larger;
+    color: rgb(95, 92, 92);
+}
+
+.main4-container{
+    margin-top: 5rem;
+    justify-content: center;
+    align-items: center;
+    height: fit-content;
+    width: 100%;
+}
+
+.projects{
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    font-weight: bold;
+}
+
+.main4{
+    justify-content: center;
+    align-items: center;
+    height: fit-content;
+    width: 60%;
+    margin-left: 20rem;
+}
+
+.cards2{
+    display: flex;
+    margin-top: 3rem;
+    justify-content: space-around;
+}
+
+.main5-container{
+    margin-top: 8rem;
+    justify-content: center;
+    align-items: center;
+    height: fit-content;
+    width: 100%;
+}
+
+.main5{
+    justify-content: center;
+    align-items: center;
+    height: fit-content;
+    width: 60%;
+    margin-left: 20rem;
+}
+
+.getintouch{
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    font-weight: bold;
+}
+
+.main6-container{
+    margin-top: 8rem;
+    justify-content: center;
+    align-items: center;
+    height: fit-content;
+    width: 100%;
+}
+
+.main6{
+    justify-content: center;
+    align-items: center;
+    height: fit-content;
+    width: 60%;
+    margin-left: 20rem;
+}
+
+.education{
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    font-weight: bold;
+}
+
+.e-para{
+    justify-content: center;
+    align-items: center;
+    display: flex;
+}
+
+.main7-container{
+    margin-top: 5rem;
+    justify-content: center;
+    align-items: center;
+    height: fit-content;
+    width: 100%;
+}
+
+.main7{
+    justify-content: center;
+    align-items: center;
+    height: fit-content;
+    width: 60%;
+    margin-left: 20rem;
+}
+
+.g-para{
+    margin-top: 2rem;
+    font-size: larger;
+    color: rgb(95, 92, 92);
+    line-height: 2rem;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+}
+
+.contactinfo{
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.nav-link {
+    color: black !important;
+}
+
+.icon{
+    color: black;
+}
+
+/* Responsive Queries */
+@media (max-width: 768px) {
+    .nav-item{
+        margin-left: 2.5rem;
+    }
+    
+    .mhead {
+        font-size: small;
+        font-weight: bold;  
+    }
+
+    .main {
+        display: flex;
+        align-items: center;
+        margin-left: 0;
+        justify-content: space-between;
+        height: 100vh;
+    }
+
+    .profile{
+        
+        flex-direction: column;
+        margin-left: 2rem;
+    }
+
+    .profile-block {
+        margin-left: 10rem;
+        
+    }
+    
+    .main2-container{
+        justify-content: center;
+        align-items: center;
+        display: flex;
+        margin-left: 3rem;
+        height: fit-content;
+        width: 125%;
+        margin-top: 0rem;
+    }
+    
+    .main2{
+        justify-content: center;
+        align-items: center;
+        height: fit-content;
+        width: 100%;
+        margin-left: 0rem;
+    }
+
+    .main3-container{
+        margin-top: 5rem;
+        justify-content: center;
+        align-items: center;
+        height: fit-content;
+        width: 100%;
+        margin-left: 6rem;
+    }
+
+    .main3{
+        justify-content: center;
+        align-items: center;
+        height: fit-content;
+        width: 0%;
+        margin-left: 13rem;
+    }
+    
+    .skills{
+        justify-content: center;
+        align-items: center;
+        display: flex;
+        font-weight: bold;
+    }
+    
+    .cards-container{
+        margin-top: 3rem;
+        justify-content: space-around;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .card{
+        margin-top: 2rem;
+    }
+    
+    .card-text{
+        font-size: larger;
+        color: rgb(95, 92, 92);
+    }
+    
+    .main6-container{
+        justify-content: center;
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+        margin-left: 6rem;
+        height: fit-content;
+        width: 100%;
+        margin-top: 2rem;
+    }
+    
+    .main6{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-left: 0;
+        justify-content: space-between;
+    }
+    
+    .education{
+        justify-content: center;
+        align-items: center;
+        font-weight: bold;
+    }
+    
+    .e-para{
+        justify-content: center;
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .main4-container{
+        justify-content: center;
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+        margin-left: 6rem;
+        height: fit-content;
+        width: 100%;
+        margin-top: 2rem;
+    }
+    
+    .projects{
+        justify-content: center;
+        align-items: center;
+        font-weight: bold;
+    }
+    
+    .main4{
+        justify-content: center;
+        align-items: center;
+        height: fit-content;
+        width: 60%;
+        margin-left: 0rem;
+    }
+    
+    .cards2{
+        display: flex;
+        flex-direction: column;
+        margin-top: 3rem;
+        justify-content: space-around;
+    }
+
+    .main7-container{
+        justify-content: center;
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+        margin-left: 0rem;
+        height: fit-content;
+        width: 100%;
+        margin-top: 2rem;
+    }
+
+    .main7{
+        justify-content: center;
+        align-items: center;
+        height: fit-content;
+        width: 350px;
+        margin-left: 0rem;
+        margin-top: 2rem;
+    }
+
+    .contactinfo{
+        display: flex;
+        margin-right: 2rem;
+        margin-top: 1rem;
+    }
+
+    .icon{
+        justify-content: space-between !important;
+        margin-left: 1rem;
+        margin-right: 0.5rem;
+    }
+
+    .email{
+        margin-left: 1rem;
+    }
+}
