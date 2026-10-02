@@ -480,3 +480,277 @@ body {
         margin-left: 1rem;
     }
 }
+
+/* =========================
+   Modern Accent & Animations
+   ========================= */
+
+:root {
+    --accent: rgb(86, 86, 213);
+    --accent-soft: rgba(86, 86, 213, 0.12);
+    --shadow-soft: 0 12px 35px rgba(86, 86, 213, 0.14);
+    --transition: 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* Navbar */
+.nav {
+    transition: box-shadow var(--transition), backdrop-filter var(--transition),
+        background-color var(--transition), border-color var(--transition);
+}
+
+.nav:hover {
+    box-shadow: 0 8px 28px rgba(86, 86, 213, 0.14);
+    border-bottom-color: rgba(86, 86, 213, 0.35);
+}
+
+.nav-link {
+    position: relative;
+    color: #111 !important;
+    font-weight: 600;
+    transition: color var(--transition), transform var(--transition);
+}
+
+.nav-link::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    bottom: 5px;
+    width: 0;
+    height: 3px;
+    border-radius: 999px;
+    background: var(--accent);
+    transform: translateX(-50%);
+    transition: width var(--transition);
+}
+
+.nav-link:hover {
+    color: var(--accent) !important;
+    transform: translateY(-2px);
+}
+
+.nav-link:hover::after {
+    width: 70%;
+}
+
+.mhead {
+    transition: transform var(--transition), text-shadow var(--transition);
+}
+
+.mhead:hover {
+    color: var(--accent);
+    transform: translateY(-2px) scale(1.04);
+    text-shadow: 0 4px 16px rgba(86, 86, 213, 0.2);
+}
+
+/* Hero */
+.profile h1 {
+    animation: fadeUp 0.9s ease both;
+}
+
+.pc {
+    animation: fadeUp 0.9s 0.12s ease both;
+}
+
+.learnmorebtn {
+    animation: fadeUp 0.9s 0.24s ease both;
+}
+
+.Lbutton {
+    transition: transform var(--transition), box-shadow var(--transition),
+        background-color var(--transition), letter-spacing var(--transition);
+}
+
+.Lbutton:hover {
+    transform: translateY(-4px) scale(1.04);
+    box-shadow: 0 12px 24px rgba(86, 86, 213, 0.22);
+    background-color: var(--accent);
+    border-color: var(--accent);
+    letter-spacing: 0.02em;
+}
+
+.profile-container {
+    transition: transform 0.5s cubic-bezier(0.22, 1, 0.36, 1),
+        box-shadow 0.5s ease;
+}
+
+.profile-container:hover {
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: var(--shadow-soft);
+}
+
+.profile-image {
+    transition: transform 0.6s cubic-bezier(0.22, 1, 0.36, 1),
+        border-color 0.35s ease, box-shadow 0.35s ease;
+}
+
+.profile-image:hover {
+    transform: rotate(2deg) scale(1.06);
+    border-color: var(--accent);
+    box-shadow: 0 0 0 8px var(--accent-soft);
+}
+
+/* Section headings: About, Skills, Education, Projects, Contact */
+.about,
+.skills,
+.education,
+.projects,
+.getintouch {
+    position: relative;
+    display: flex;
+    width: fit-content;
+    margin-left: auto;
+    margin-right: auto;
+    color: #161616;
+    cursor: default;
+    transition: color var(--transition), transform var(--transition);
+}
+
+.about::after,
+.skills::after,
+.education::after,
+.projects::after,
+.getintouch::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    bottom: -10px;
+    width: 42%;
+    height: 4px;
+    border-radius: 999px;
+    background: var(--accent);
+    transform: translateX(-50%) scaleX(0.35);
+    transform-origin: center;
+    opacity: 0.65;
+    transition: width var(--transition), transform var(--transition),
+        opacity var(--transition);
+}
+
+.about:hover,
+.skills:hover,
+.education:hover,
+.projects:hover,
+.getintouch:hover {
+    color: var(--accent);
+    transform: translateY(-4px) scale(1.03);
+}
+
+.about:hover::after,
+.skills:hover::after,
+.education:hover::after,
+.projects:hover::after,
+.getintouch:hover::after {
+    width: 100%;
+    transform: translateX(-50%) scaleX(1);
+    opacity: 1;
+}
+
+/* Section content motion */
+.a-para,
+.e-para,
+.g-para {
+    transition: transform var(--transition), color var(--transition);
+}
+
+.a-para:hover,
+.e-para:hover,
+.g-para:hover {
+    transform: translateY(-3px);
+    color: #4c4a4a;
+}
+
+/* Cards */
+.card {
+    border: 1px solid rgba(86, 86, 213, 0.12);
+    border-radius: 18px;
+    overflow: hidden;
+    transition: transform 0.45s cubic-bezier(0.22, 1, 0.36, 1),
+        box-shadow 0.45s ease, border-color 0.35s ease;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.05);
+    animation: cardEnter 0.75s ease both;
+}
+
+.card:hover {
+    transform: translateY(-10px) scale(1.025) rotateX(1deg);
+    box-shadow: 0 18px 40px rgba(86, 86, 213, 0.18);
+    border-color: rgba(86, 86, 213, 0.38);
+}
+
+.card-img-top {
+    transition: transform 0.6s cubic-bezier(0.22, 1, 0.36, 1),
+        filter 0.45s ease;
+}
+
+.card:hover .card-img-top {
+    transform: scale(1.07);
+    filter: saturate(1.08) contrast(1.03);
+}
+
+.card-title {
+    transition: color var(--transition), transform var(--transition);
+}
+
+.card:hover .card-title {
+    color: var(--accent);
+    transform: translateX(3px);
+}
+
+.card-text {
+    transition: color var(--transition);
+}
+
+.card:hover .card-text {
+    color: #4f4d4d;
+}
+
+/* Contact icons */
+.contactinfo .icon {
+    transition: transform var(--transition), color var(--transition),
+        filter var(--transition);
+}
+
+.contactinfo .icon:hover {
+    color: var(--accent);
+    transform: translateY(-7px) scale(1.08);
+    filter: drop-shadow(0 8px 12px rgba(86, 86, 213, 0.2));
+}
+
+/* Accent selection */
+::selection {
+    background: var(--accent);
+    color: white;
+}
+
+/* Entry animations */
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(24px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes cardEnter {
+    from {
+        opacity: 0;
+        transform: translateY(24px) scale(0.98);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+/* Accessibility */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        scroll-behavior: auto !important;
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
