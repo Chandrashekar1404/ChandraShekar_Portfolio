@@ -1528,6 +1528,10 @@ body {
    ========================= */
 .scroll-top-btn {
     position: fixed;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transform: translateY(10px);
     right: 24px;
     bottom: 24px;
     width: 52px;
@@ -1547,6 +1551,13 @@ body {
     backdrop-filter: blur(10px);
     transition: transform .3s ease, background-color .3s ease,
         color .3s ease, box-shadow .3s ease;
+}
+
+.scroll-top-btn.show {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+    transform: translateY(0);
 }
 
 .scroll-top-btn:hover {
