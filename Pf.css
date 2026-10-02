@@ -1294,8 +1294,13 @@ body {
     margin: 0 auto;
     display: grid !important;
     grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 1.7rem;
+    column-gap: 1.7rem;
+    row-gap: 2.8rem !important;
     align-items: stretch;
+}
+
+.cards2 > .card {
+    margin: 0 !important;
 }
 
 .cards2 .card {
