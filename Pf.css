@@ -754,3 +754,83 @@ body {
         transition-duration: 0.01ms !important;
     }
 }
+
+
+/* Floating light flowers */
+.floating-flowers {
+    position: fixed;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.floating-flowers span {
+    position: absolute;
+    bottom: -40px;
+    left: var(--left, 50%);
+    font-size: var(--size, 18px);
+    color: rgb(86, 86, 213);
+    opacity: var(--opacity, 0.18);
+    text-shadow:
+        0 0 6px rgba(86, 86, 213, 0.35),
+        0 0 14px rgba(86, 86, 213, 0.18);
+    filter: blur(0.15px);
+    animation: flowerFloat var(--duration, 14s) linear infinite;
+    animation-delay: var(--delay, 0s);
+    will-change: transform, opacity;
+}
+
+.floating-flowers span:nth-child(1)  { --left: 5%;  --size: 15px; --duration: 16s; --delay: -3s;  --opacity: .16; }
+.floating-flowers span:nth-child(2)  { --left: 13%; --size: 10px; --duration: 12s; --delay: -8s;  --opacity: .12; }
+.floating-flowers span:nth-child(3)  { --left: 22%; --size: 19px; --duration: 18s; --delay: -12s; --opacity: .20; }
+.floating-flowers span:nth-child(4)  { --left: 31%; --size: 13px; --duration: 14s; --delay: -5s;  --opacity: .15; }
+.floating-flowers span:nth-child(5)  { --left: 40%; --size: 11px; --duration: 20s; --delay: -15s; --opacity: .12; }
+.floating-flowers span:nth-child(6)  { --left: 49%; --size: 17px; --duration: 15s; --delay: -7s;  --opacity: .18; }
+.floating-flowers span:nth-child(7)  { --left: 58%; --size: 12px; --duration: 19s; --delay: -11s; --opacity: .14; }
+.floating-flowers span:nth-child(8)  { --left: 67%; --size: 16px; --duration: 13s; --delay: -4s;  --opacity: .17; }
+.floating-flowers span:nth-child(9)  { --left: 76%; --size: 10px; --duration: 17s; --delay: -10s; --opacity: .12; }
+.floating-flowers span:nth-child(10) { --left: 84%; --size: 18px; --duration: 21s; --delay: -14s; --opacity: .19; }
+.floating-flowers span:nth-child(11) { --left: 91%; --size: 13px; --duration: 15s; --delay: -2s;  --opacity: .15; }
+.floating-flowers span:nth-child(12) { --left: 96%; --size: 9px;  --duration: 18s; --delay: -9s;  --opacity: .11; }
+
+@keyframes flowerFloat {
+    0% {
+        transform: translate3d(0, 30px, 0) rotate(0deg) scale(.7);
+        opacity: 0;
+    }
+    15% {
+        opacity: var(--opacity, .16);
+    }
+    50% {
+        transform: translate3d(35px, -50vh, 0) rotate(180deg) scale(1);
+    }
+    85% {
+        opacity: var(--opacity, .16);
+    }
+    100% {
+        transform: translate3d(-30px, -110vh, 0) rotate(360deg) scale(.75);
+        opacity: 0;
+    }
+}
+
+/* Keep page content above the decorative layer */
+.nav,
+.main,
+.main2-container,
+.main3-container,
+.main4-container,
+.main5-container,
+.main6-container,
+.main7-container {
+    position: relative;
+    z-index: 1;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .floating-flowers {
+        display: none;
+    }
+}
