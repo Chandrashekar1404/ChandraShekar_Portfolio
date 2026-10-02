@@ -945,7 +945,7 @@ body {
     margin: 3.2rem auto 0;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 1.6rem;
+    gap: 2rem;
 }
 
 .skill-card {
