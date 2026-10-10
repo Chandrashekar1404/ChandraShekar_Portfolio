@@ -1241,17 +1241,6 @@ body {
     box-shadow: 0 24px 55px rgba(86, 86, 213, .13);
 }
 
-.main6::before {
-    content: "2024";
-    position: absolute;
-    right: 2rem;
-    top: 1.5rem;
-    color: rgba(86, 86, 213, .08);
-    font-size: 4.5rem;
-    font-weight: 700;
-    line-height: 1;
-}
-
 .main6 .education {
     margin-bottom: 2rem;
 }
@@ -1267,12 +1256,6 @@ body {
     background: rgba(86, 86, 213, .035);
     color: #65616a;
     text-align: center;
-}
-
-.e-para:first-of-type {
-    color: var(--accent);
-    font-weight: 700;
-    letter-spacing: .08em;
 }
 
 /* Projects */
